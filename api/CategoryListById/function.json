@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ],
+      "route": "CategoryList/{id:int}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "categories",
+      "type": "sql",
+      "direction": "in",
+      "commandText": "SELECT [ProductCategoryID],[Name] FROM [SalesLT].[ProductCategory] WHERE ParentProductCategoryID = @id",
+      "commandType": "Text",
+      "connectionStringSetting": "SqlConnectionString",
+      "parameters": "@id={id}"
+    }
+  ]
+}

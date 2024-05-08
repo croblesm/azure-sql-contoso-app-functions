@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ],
+      "route": "ProductSalesSummary/{id:int}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "sql",
+      "name": "salesinfo",
+      "direction": "in",
+      "commandType": "storedProcedure",
+      "commandText": "SalesLT.ProductSalesLastYear",
+      "connectionStringSetting": "SqlConnectionString",
+      "parameters": "@PRODUCTID={id}"
+    }
+  ]
+}

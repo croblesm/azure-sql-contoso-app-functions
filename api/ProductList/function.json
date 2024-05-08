@@ -1,0 +1,27 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "products",
+      "type": "sql",
+      "direction": "in",
+      "commandText": "SELECT P.ProductId, P.Name, P.ProductNumber, P.ProductCategoryID, P.ListPrice, PC.Name as Category FROM SalesLT.Product P INNER JOIN SalesLT.ProductCategory PC ON P.ProductCategoryID = PC.ProductCategoryID WHERE PC.ParentProductCategoryID = @CategoryId",
+      "commandType": "Text",
+      "parameters": "@CategoryId = {Query.CategoryId}",
+      "connectionStringSetting": "SqlConnectionString"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "name": "orderEntry",
+      "type": "sqlTrigger",
+      "direction": "in",
+      "tableName": "SalesLT.SalesOrderHeader",
+      "connectionStringSetting": "SqlConnectionString"
+    },
+    {
+      "type": "eventHub",
+      "name": "outputNewOrders",
+      "eventHubName": "neworders",
+      "connection": "EventHubSendAppSetting",
+      "direction": "out"
+  }
+  ]
+}
