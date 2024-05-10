@@ -23,4 +23,7 @@
       <DefaultValue>0</DefaultValue>
     </SqlCmdVariable>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ContosoProducts_1.publish.xml.publish.xml" />
+  </ItemGroup>
 </Project>
