@@ -1,54 +1,27 @@
 GET http://localhost:7071/api/CategoryList
 
 ###
-
 GET http://localhost:7071/api/CategoryList/2
 
 ###
 GET http://localhost:7071/api/ProductList?CategoryId=1
 
 ###
-
-	# [ProductID] [int] IDENTITY(1,1) NOT NULL,
-	# [Name] [dbo].[Name] NOT NULL,
-	# [ProductNumber] [nvarchar](25) NOT NULL,
-	# [Color] [nvarchar](15) NULL,
-	# [StandardCost] [money] NOT NULL,
-	# [ListPrice] [money] NOT NULL,
-	# [Size] [nvarchar](5) NULL,
-	# [Weight] [decimal](8, 2) NULL,
-	# [ProductCategoryID] [int] NULL,
-	# [ProductModelID] [int] NULL,
-	# [SellStartDate] [datetime] NOT NULL,
-	# [SellEndDate] [datetime] NULL,
-	# [DiscontinuedDate] [datetime] NULL,
-	# [ThumbNailPhoto] [varbinary](max) NULL,
-	# [ThumbnailPhotoFileName] [nvarchar](50) NULL,
-	# [rowguid] [uniqueidentifier] NOT NULL,
-	# [ModifiedDate] [datetime] NOT NULL
-
 POST http://localhost:7071/api/AddProduct
 Content-Type: application/json
 
 {
-    "Name": "A New Product",
-    "Color": "red",
-    "StandardCost": 1.23,
-    "ListPrice": 2.34,
-    "Size": "L",
+    "Name": "Test product",
+    "Color": "blue",
+    "StandardCost": 100,
+    "ListPrice": 200,
+    "Size": "M",
     "Weight": 1.23,
     "ProductCategoryID": 40
 }
 
 
 ###
-
 GET http://localhost:7071/api/ProductSalesSummary/991
 
 ###
-
-POST http://localhost:7071/api/AddProduct
-Content-Type: application/json
-
-{"ProductCategoryID":"35","Name":"Sport-101 Helmet, Blue","Color":"Blue","Size":"S","Weight":"1","StandardCost":"20.00","ListPrice":"25.00"}
-
